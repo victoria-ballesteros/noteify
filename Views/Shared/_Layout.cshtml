@@ -1,49 +1,108 @@
 ﻿<!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>@ViewData["Title"] - Application</title>
-    <link rel="stylesheet" href="~/lib/bootstrap/dist/css/bootstrap.min.css" />
+    <title>@ViewData["Title"] </title>
     <link rel="stylesheet" href="~/css/site.css" asp-append-version="true" />
     <link rel="stylesheet" href="~/Application.styles.css" asp-append-version="true" />
 </head>
-<body>
-    <header>
-        <nav class="navbar navbar-expand-sm navbar-toggleable-sm navbar-light bg-white border-bottom box-shadow mb-3">
-            <div class="container-fluid">
-                <a class="navbar-brand" asp-area="" asp-controller="Home" asp-action="Index">Application</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target=".navbar-collapse" aria-controls="navbarSupportedContent"
-                        aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="navbar-collapse collapse d-sm-inline-flex justify-content-between">
-                    <ul class="navbar-nav flex-grow-1">
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Index">Home</a>
+
+<body class="bg-spotify-black flex flex-col min-h-screen p-2">
+    <div class='flex flex-grow'>
+        <header class="flex-shrink-0 w-64 text-spotify-white flex flex-col">
+            <nav class="flex flex-col flex-grow">
+                <div class="bg-spotify-dark-grey font-medium mb-1 p-4 rounded-lg">
+                    <a class='flex items-center mb-4'>
+                        <img src="~/assets/spotify-logo.png" class="h-7 w-auto" alt="Home" />
+                        <span class="ml-2 text-spotify-white">Noteify</span>
+                    </a>
+                    <ul>
+                        <li class='mb-2'>
+                            <a class="flex items-center gap-4" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/assets/Home.svg" class="h-7 w-auto" alt="Home" />
+                                <span class="ml-2">Home</span>
+                            </a>
                         </li>
-                        <li class="nav-item">
-                            <a class="nav-link text-dark" asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+                        <li class='mb-2'>
+                            <a class="flex items-center gap-4" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/assets/Search.svg" class="h-7 w-auto" alt="Home" />
+                                <span class="ml-2">Search</span>
+                            </a>
+                        </li>
+                        <li>
+                            <a class="flex items-center gap-4" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/assets/Profile.svg" class="h-7 w-auto" alt="Home" />
+                                <span class="ml-2">Profile</span>
+                            </a>
                         </li>
                     </ul>
                 </div>
-            </div>
-        </nav>
-    </header>
-    <div class="container">
-        <main role="main" class="pb-3">
-            @RenderBody()
+                <div class='bg-spotify-dark-grey p-4 font-medium flex-grow rounded-lg mb-1'>
+                    <ul>
+                        <li class='mb-2'>
+                            <a class="flex items-center gap-4" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/assets/YourLibrary.svg" class="h-7 w-auto" alt="Home" />
+                                <span class="ml-2">Today</span>
+                            </a>
+                        </li>
+                        <li class='mb-2'>
+                            <a class="flex items-center gap-4" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/assets/RightArrow.svg" class="h-7 w-auto" alt="Home" />
+                                <span class="ml-2">Lists</span>
+                            </a>
+                            <div class='bg-spotify-grey  text-white rounded-lg mt-2 p-2'>
+                                <p class='mb-2'>Create your first list, is very easy!</p>
+                                <div class='bg-white text-spotify-black p-2 rounded-full flex justify-center'>
+                                    <a asp-asp-controller="Home" asp-action="Index">Create list</a>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <a class="flex items-center gap-4" asp-area="" asp-controller="Home" asp-action="Index">
+                                <img src="~/assets/RightArrow.svg" class="h-7 w-auto" />
+                                <span class="ml-2">Tasks</span>
+                            </a>
+                            <div class='bg-spotify-grey  text-white rounded-lg mt-2 p-2'>
+                                <p class='mb-2'>Add a new task</p>
+                                <div class='bg-white text-spotify-black p-2 rounded-full flex justify-center'>
+                                    <a asp-asp-controller="Home" asp-action="Index">Create task</a>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main role="main" class="flex flex-col flex-grow ml-1 mb-1 text-spotify-white">
+            <section class='bg-spotify-dark-grey rounded-lg p-4'>
+                <h1>Listen to your favorite music here</h1>
+            </section>
+            <section class='bg-spotify-dark-grey flex-grow mt-1 rounded-lg'>
+                @RenderBody()
+            </section>
         </main>
     </div>
-
-    <footer class="border-top footer text-muted">
-        <div class="container">
-            &copy; 2024 - Application - <a asp-area="" asp-controller="Home" asp-action="Privacy">Privacy</a>
+    <footer
+        class="w-full rounded-lg bg-gradient-to-r from-spotify-electric-purple to-spotify-darkest-gradient text-white font-medium mt-auto">
+        <div class="p-4 flex justify-between">
+            <div>
+                <p class='text-sm'>Noteify for free</p>
+                <p class='text-lg'>Let us take a hand on the wheel for you.</p>
+            </div>
+            <div>
+                <div class='bg-white text-spotify-black p-4 rounded-full'>
+                    <a asp-asp-controller="Home" asp-action="Index">Sign up</a>
+                </div>
+            </div>
         </div>
     </footer>
+
     <script src="~/lib/jquery/dist/jquery.min.js"></script>
-    <script src="~/lib/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
     <script src="~/js/site.js" asp-append-version="true"></script>
     @await RenderSectionAsync("Scripts", required: false)
 </body>
+
+
 </html>
