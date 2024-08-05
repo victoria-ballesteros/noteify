@@ -1,0 +1,17 @@
+{
+  "name": "noteify",
+  "version": "1.0.0",
+  "description": "Task manager software fully inspired by Spotify style, with API integration for listening to music while managing tasks lists or completing a certain timer.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky install"
+  },
+  "author": "Victoria Ballesteros",
+  "license": "GPL-3.0-or-later",
+  "devDependencies": {
+    "@commitlint/cli": "^19.3.0",
+    "@commitlint/config-conventional": "^19.2.2",
+    "husky": "^9.1.4"
+  }
+}
